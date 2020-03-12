@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Flicks</title>
+    <title>Flick$</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,20 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <h1>Flick$</h1>
+    </header>
+
+    <div class="content">
+      <%= yield %>
+    </div>
+
+    <footer>
+      <p>
+      Copyright &copy; 2018-<%= Time.now.year %>
+      Made with grit by <%= link_to 'David Lineman', 'https://davidlineman.netlify.com/' %>
+      </p>
+    </footer>
+
   </body>
 </html>
