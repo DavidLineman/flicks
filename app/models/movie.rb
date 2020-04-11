@@ -7,6 +7,8 @@ class Movie < ApplicationRecord
     message: "must be a JPG or PNG image"
   }
 
+  has_many :reviews
+
   RATINGS = %w(G PG PG-13 R NC-17)
 
   validates :rating, inclusion: { in: RATINGS }
