@@ -1,4 +1,6 @@
 class Movie < ApplicationRecord
+  has_many :reviews, dependent: :destroy
+
   validates :title, :released_on, :duration, presence: true 
   validates :description, length: { minimum: 25 }
   validates :total_gross, numericality: { greater_than_or_equal_to: 0 }
@@ -6,8 +8,6 @@ class Movie < ApplicationRecord
     with: /\w+\.(jpg|png)\z/i,
     message: "must be a JPG or PNG image"
   }
-
-  has_many :reviews
 
   RATINGS = %w(G PG PG-13 R NC-17)
 
