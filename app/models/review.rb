@@ -10,4 +10,5 @@ class Review < ApplicationRecord
     in: STARS, 
     message: "Must be between 1 and 5 stars."
   }
+  
 end
