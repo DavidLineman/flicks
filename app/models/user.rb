@@ -7,6 +7,6 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 10, allow_blank: true }
 
   def gravatar_id
-    Digest::MD5::hexidigest(email.downcase)
+    Digest::MD5::hexdigest(email.downcase)
   end
 end
