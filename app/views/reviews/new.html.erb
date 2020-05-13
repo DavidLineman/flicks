@@ -5,8 +5,6 @@
   <%= render "shared/errors", object: @review %>
 
 <%= form_with(model: [@movie, @review], local: true)  do |f| %>
-  <%= f.label :name %>
-  <%= f.text_area :name, autofocus: true %>
 
   <%= f.label :stars %>
   <% Review::STARS.each do |star| %>
