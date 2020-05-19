@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :require_sign_in, except: [:index, :show]
+  before_action :require_signin, except: [:index, :show]
   before_action :require_admin, except: [:index, :show]
 
   def index
@@ -9,6 +9,7 @@ class MoviesController < ApplicationController
   def show
     @movie = Movie.find(params[:id])
     @fans = @movie.fans
+    @genres = @movie.genres
     if current_user
       @favorite = current_user.favorites.find_by(movie_id: @movie.id)
     end
